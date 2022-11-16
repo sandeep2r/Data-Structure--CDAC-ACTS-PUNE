@@ -20,19 +20,21 @@ public class CircularQueue implements QueueIntf {
 	if(isFull()) {
 		return;
 	}
+	
 	rear = (rear + 1 ) % queuesize;
 	queueData[rear] = element;
 		
 	}
 
 	@Override
-	public Integer DeleteQ() {
+	public void DeleteQ() {
 		if(isEmpty()) {
-			return null;
+			return;
 		}
+		queueData[front] =Integer.MIN_VALUE;
 		front = (front + 1 ) % queuesize;
-		Integer element = (Integer) queueData[front];
-		return element;
+		
+	
 		
 	}
 
